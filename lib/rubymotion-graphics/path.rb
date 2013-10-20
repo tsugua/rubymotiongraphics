@@ -162,7 +162,7 @@ module RMGraphics
           x = x - self.width / 2
           y = y - self.height / 2
         end
-        curve = MRGraphics.min(width * roundness, height * roundness)
+        curve = RMGraphics.min(width * roundness, height * roundness)
         p = Path.new
         p.move_to(x, y+curve)
         p.curve_to(x, y, x, y, x+curve, y)
@@ -204,8 +204,8 @@ module RMGraphics
 
     # draw the arc of a circle with center point x,y, radius, start angle (0 deg = 12 o'clock) and end angle
     def arc(x, y, radius, start_angle, end_angle)
-      start_angle = MRGraphics.radians(90 - start_angle)
-      end_angle   = MRGraphics.radians(90 - end_angle)
+      start_angle = RMGraphics.radians(90 - start_angle)
+      end_angle   = RMGraphics.radians(90 - end_angle)
       clockwise   = 1 # 1 = clockwise, 0 = counterclockwise
       CGPathAddArc(@path, @transform, x, y, radius, start_angle, end_angle, clockwise)
       self
@@ -261,7 +261,7 @@ module RMGraphics
     # specify rotation for subsequent operations
     def rotate(deg)
       puts "path.rotate #{deg}" if @verbose
-      @transform = CGAffineTransformRotate(@transform, MRGraphics.radians(deg))
+      @transform = CGAffineTransformRotate(@transform, RMGraphics.radians(deg))
     end
   
     # scale by horizontal/vertical scaling factors sx,sy for subsequent drawing operations

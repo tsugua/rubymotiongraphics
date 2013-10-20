@@ -3,7 +3,6 @@ unless defined?(Motion::Project::Config)
 end
 
 Motion::Project::App.setup do |app|
-
   
     app.frameworks << 'Cocoa' unless app.frameworks.include?('Cocoa')
     app.frameworks << 'Quartz' unless app.frameworks.include?('Quartz')

@@ -51,8 +51,8 @@ module RMGraphics
       @y += @velocity_y
 
       # randomly increase/decrease direction
-      @velocity_x += MRGraphics.random(-1.0, 1.0) * @acceleration
-      @velocity_y += MRGraphics.random(-1.0, 1.0) * @acceleration
+      @velocity_x += RMGraphics.random(-1.0, 1.0) * @acceleration
+      @velocity_y += RMGraphics.random(-1.0, 1.0) * @acceleration
 
       # draw a line from the old position to the new
       @points.push(NSPoint.new(@x, @y))

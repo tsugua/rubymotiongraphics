@@ -20,5 +20,4 @@ class CustomView < NSView
       end
     end
   end
-  
 end

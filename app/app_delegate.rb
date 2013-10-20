@@ -11,7 +11,7 @@ class AppDelegate
       defer: false)
     
     #canvas Example:  
-    # @mainWindow.contentView = CustomView.alloc.initWithFrame(@mainWindow.frame)
+    @mainWindow.contentView = CustomView.alloc.initWithFrame(@mainWindow.frame)
     
     
     @mainWindow.title = NSBundle.mainBundle.infoDictionary['CFBundleName']
