@@ -22,28 +22,27 @@ module RMGraphics
 
   # drawing destination for writing a PDF, PNG, GIF, JPG, or TIF file
   class Canvas
-    
+    #getting an error when I try to reference these constants so changing them to the numbers
     BlendModes = {
-      :normal     => KCGBlendModeNormal,
-      :darken     => KCGBlendModeDarken,
-      :multiply   => KCGBlendModeMultiply,
-      :screen     => KCGBlendModeScreen,
-      :overlay    => KCGBlendModeOverlay,
-      :darken     => KCGBlendModeDarken,
-      :lighten    => KCGBlendModeLighten,
-      :colordodge => KCGBlendModeColorDodge,
-      :colorburn  => KCGBlendModeColorBurn,
-      :softlight  => KCGBlendModeSoftLight,
-      :hardlight  => KCGBlendModeHardLight,
-      :difference => KCGBlendModeDifference,
-      :exclusion  => KCGBlendModeExclusion,
-      :hue        => KCGBlendModeHue,
-      :saturation => KCGBlendModeSaturation,
-      :color      => KCGBlendModeColor,
-      :luminosity => KCGBlendModeLuminosity,
-      :copy       => KCGBlendModeCopy
+      :normal     => 0, #KCGBlendModeNormal,
+      :darken     => 4, #KCGBlendModeDarken,
+      :multiply   => 1, #KCGBlendModeMultiply,
+      :screen     => 2, #KCGBlendModeScreen,
+      :overlay    => 3, #KCGBlendModeOverlay,
+      :lighten    => 5, #KCGBlendModeLighten,
+      :colordodge => 6, #KCGBlendModeColorDodge,
+      :colorburn  => 7, #KCGBlendModeColorBurn,
+      :softlight  => 8, #KCGBlendModeSoftLight,
+      :hardlight  => 9, #KCGBlendModeHardLight,
+      :difference => 10, #KCGBlendModeDifference,
+      :exclusion  => 11, #KCGBlendModeExclusion,
+      :hue        => 12, #KCGBlendModeHue,
+      :saturation => 13, #KCGBlendModeSaturation,
+      :color      => 14, #KCGBlendModeColor,
+      :luminosity => 15, #KCGBlendModeLuminosity,
+      :copy       => 17, #KCGBlendModeCopy
     }
-    BlendModes.default(KCGBlendModeNormal)
+    BlendModes.default(0)  #KCGBlendModeNormal)
     
     DefaultOptions = {:quality => 0.8, :width => 400, :height => 400}
   
@@ -129,7 +128,8 @@ module RMGraphics
       end
 
       # antialiasing
-      CGContextSetAllowsAntialiasing(@ctx, true)
+      #FIXME: This is causing an error about invalid context. Turning it off for now.
+      # CGContextSetAllowsAntialiasing(@ctx, true)
 
       # set defaults
       fill            # set the default fill
@@ -360,6 +360,12 @@ module RMGraphics
       clockwise = 1 # 1 = clockwise, 0 = counterclockwise
       CGContextAddArc(@ctx, x, y, radius, start_angle, end_angle, clockwise)
       CGContextDrawPath(@ctx, KCGPathStroke)
+    end
+    
+    # draw the arc of a circle with center point x,y, radius, start angle (0 deg = 12 o'clock) and end angle
+    def circle(x, y, radius)
+      CGContextAddArc(@ctx, x, y, radius, 0, 2*Math::PI, 1)
+      CGContextDrawPath(@ctx, KCGPathFillStroke)
     end
   
     # draw a bezier curve from the current point, given the coordinates of two handle control points and an end point
@@ -659,7 +665,7 @@ module RMGraphics
         return
       elsif @filetype == :png
         format = NSPNGFileType
-      elsif @filetype == :tif
+      elsif @filetype == :tif || @filetype == :tiff
         format = NSTIFFFileType
         properties[NSImageCompressionMethod] = NSTIFFCompressionLZW
         #properties[NSImageCompressionMethod] = NSTIFFCompressionNone

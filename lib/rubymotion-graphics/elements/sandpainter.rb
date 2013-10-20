@@ -13,7 +13,7 @@
 # Copyright:: Copyright (c) 2008 James Reynolds
 # License::   Distributes under the same terms as Ruby
 
-module MRGraphics
+module RMGraphics
 
   # draw watercolor-like painted strokes (adapted from code by Jared Tarbell - complexification.net)
   class SandPainter

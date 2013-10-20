@@ -13,7 +13,7 @@
 # Copyright:: Copyright (c) 2008 James Reynolds
 # License::   Distributes under the same terms as Ruby
 
-module MRGraphics
+module RMGraphics
   
   # draw a smooth gradient between any number of key colors
   class Gradient

@@ -13,7 +13,7 @@
 # Copyright:: Copyright (c) 2008 James Reynolds
 # License::   Distributes under the same terms as Ruby
 
-module MRGraphics
+module RMGraphics
   
   # load a raw image file for use on a canvas
   class Image
@@ -444,7 +444,7 @@ module MRGraphics
           nsimg = NSBitmapImageRep.alloc.initWithCIImage(ciimage)
           nscolor = nsimg.colorAtX 0, y:0 # NSColor
           #r,g,b,a = nscolor.getRed_green_blue_alpha_()
-          r,b,b,a = [nscolor.redComponent,nscolor.greenComponent,nscolor.blueComponent,nscolor.alphaComponent]
+          r,g,b,a = [nscolor.redComponent,nscolor.greenComponent,nscolor.blueComponent,nscolor.alphaComponent]
           colors.push(Color.new(r,g,b,1.0))
         end
       elsif (type == :random)

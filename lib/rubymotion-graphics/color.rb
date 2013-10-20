@@ -13,11 +13,10 @@
 # Copyright:: Copyright (c) 2008 James Reynolds
 # License::   Distributes under the same terms as Ruby
 
-module MRGraphics
+module RMGraphics
 
   # define and manipulate colors in RGBA format
   class Color
-    
     attr_accessor :rgb
     
     # create a new color with the given RGBA values

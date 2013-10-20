@@ -16,10 +16,6 @@
 # More information about Quartz 2D is available on the Apple's website:
 # http://developer.apple.com/documentation/GraphicsImaging/Conceptual/drawingwithquartz2d/dq_overview/dq_overview.html#//apple_ref/doc/uid/TP30001066-CH202-TPXREF101
 
-# framework 'Cocoa'
-# framework 'Quartz'
-# framework 'CoreGraphics'
-
 module RMGraphics
 
   # UTILITY FUNCTIONS (math/geometry)

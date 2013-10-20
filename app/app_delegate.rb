@@ -1,8 +1,6 @@
 class AppDelegate
   def applicationDidFinishLaunching(notification)
     
-    p RMGraphics::TEST
-    # p RMGraphics::Colormethods?
     buildWindow
   end
 
@@ -11,9 +9,13 @@ class AppDelegate
       styleMask: NSTitledWindowMask|NSClosableWindowMask|NSMiniaturizableWindowMask|NSResizableWindowMask,
       backing: NSBackingStoreBuffered,
       defer: false)
-  
-    @mainWindow.contentView = CustomView.alloc.initWithFrame(@mainWindow.frame)
+    
+    #canvas Example:  
+    # @mainWindow.contentView = CustomView.alloc.initWithFrame(@mainWindow.frame)
+    
+    
     @mainWindow.title = NSBundle.mainBundle.infoDictionary['CFBundleName']
     @mainWindow.orderFrontRegardless
+        
   end
 end

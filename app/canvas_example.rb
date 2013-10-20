@@ -1,16 +1,10 @@
-# framework 'Cocoa'
-# here = File.expand_path(File.dirname(__FILE__))
-# require File.join(here, '..', 'graphics')
-# require File.join(here, 'app_wrapper')
-
 class CustomView < NSView
-  # include MRGraphics
 
   def drawRect(rect)
     dimensions = [CGRectGetWidth(rect), CGRectGetHeight(rect)]
-    Canvas.for_current_context(:size => dimensions) do |c|
-      c.background(Color.black)
-      white = Color.white
+    RMGraphics::Canvas.for_current_context(:size => dimensions) do |c|
+      c.background(RMGraphics::Color.black)
+      white = RMGraphics::Color.white
       c.fill(white)
       c.stroke(0.2)
       c.stroke_width(1)   
@@ -28,7 +22,3 @@ class CustomView < NSView
   end
   
 end
-# 
-# app = AppWrapper.new
-# app.window.contentView = CustomView.alloc.initWithFrame(app.frame)
-# app.start

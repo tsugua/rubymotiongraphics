@@ -12,15 +12,19 @@ Motion::Project::App.setup do |app|
   
     Dir.glob(File.join(File.dirname(__FILE__), 'rubymotion-graphics/*.rb')).each do |file|
       app.files.unshift(file)
-    end
+    end 
 end
 
-require 'rubymotion-graphics/canvas'
-require 'rubymotion-graphics/color'
-require 'rubymotion-graphics/gradient'
-require 'rubymotion-graphics/graphics'
-require 'rubymotion-graphics/image'
-require 'rubymotion-graphics/path'
-require 'rubymotion-graphics/pdf'
+require 'rubymotion-graphics/canvas.rb'
+require 'rubymotion-graphics/color.rb'
+require 'rubymotion-graphics/gradient.rb'
+require 'rubymotion-graphics/graphics.rb'
+require 'rubymotion-graphics/image.rb'
+require 'rubymotion-graphics/path.rb'
+require 'rubymotion-graphics/pdf.rb'
+require 'rubymotion-graphics/elements/particle.rb'
+require 'rubymotion-graphics/elements/rope.rb'
+require 'rubymotion-graphics/elements/sandpainter.rb'
+
 
 
