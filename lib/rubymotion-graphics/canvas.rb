@@ -22,25 +22,27 @@ module RMGraphics
 
   # drawing destination for writing a PDF, PNG, GIF, JPG, or TIF file
   class Canvas
-    #getting an error when I try to reference these constants so changing them to the numbers
+    
+    #getting an error when I try to reference these constants so changing them to 
+    #the equivalent numbers
     BlendModes = {
-      :normal     => 0, #KCGBlendModeNormal,
-      :darken     => 4, #KCGBlendModeDarken,
-      :multiply   => 1, #KCGBlendModeMultiply,
-      :screen     => 2, #KCGBlendModeScreen,
-      :overlay    => 3, #KCGBlendModeOverlay,
-      :lighten    => 5, #KCGBlendModeLighten,
-      :colordodge => 6, #KCGBlendModeColorDodge,
-      :colorburn  => 7, #KCGBlendModeColorBurn,
-      :softlight  => 8, #KCGBlendModeSoftLight,
-      :hardlight  => 9, #KCGBlendModeHardLight,
-      :difference => 10, #KCGBlendModeDifference,
-      :exclusion  => 11, #KCGBlendModeExclusion,
-      :hue        => 12, #KCGBlendModeHue,
-      :saturation => 13, #KCGBlendModeSaturation,
-      :color      => 14, #KCGBlendModeColor,
-      :luminosity => 15, #KCGBlendModeLuminosity,
-      :copy       => 17, #KCGBlendModeCopy
+      :normal     => KCGBlendModeNormal,
+      :darken     => KCGBlendModeDarken,
+      :multiply   => KCGBlendModeMultiply,
+      :screen     => KCGBlendModeScreen,
+      :overlay    => KCGBlendModeOverlay,
+      :lighten    => KCGBlendModeLighten,
+      :colordodge => KCGBlendModeColorDodge,
+      :colorburn  => KCGBlendModeColorBurn,
+      :softlight  => KCGBlendModeSoftLight,
+      :hardlight  => KCGBlendModeHardLight,
+      :difference => KCGBlendModeDifference,
+      :exclusion  => KCGBlendModeExclusion,
+      :hue        => KCGBlendModeHue,
+      :saturation => KCGBlendModeSaturation,
+      :color      => KCGBlendModeColor,
+      :luminosity => KCGBlendModeLuminosity,
+      :copy       => KCGBlendModeCopy
     }
     BlendModes.default(0)  #KCGBlendModeNormal)
     

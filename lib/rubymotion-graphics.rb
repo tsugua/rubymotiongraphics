@@ -2,6 +2,8 @@ unless defined?(Motion::Project::Config)
   raise "This file must be required within a RubyMotion project Rakefile"
 end
 
+require rubymotion-graphics
+
 Motion::Project::App.setup do |app|
   
     app.frameworks << 'Cocoa' unless app.frameworks.include?('Cocoa')
@@ -13,17 +15,5 @@ Motion::Project::App.setup do |app|
       app.files.unshift(file)
     end 
 end
-
-require 'rubymotion-graphics/canvas.rb'
-require 'rubymotion-graphics/color.rb'
-require 'rubymotion-graphics/gradient.rb'
-require 'rubymotion-graphics/graphics.rb'
-require 'rubymotion-graphics/image.rb'
-require 'rubymotion-graphics/path.rb'
-require 'rubymotion-graphics/pdf.rb'
-require 'rubymotion-graphics/elements/particle.rb'
-require 'rubymotion-graphics/elements/rope.rb'
-require 'rubymotion-graphics/elements/sandpainter.rb'
-
 
 
