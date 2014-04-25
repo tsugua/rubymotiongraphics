@@ -2,8 +2,8 @@ unless defined?(Motion::Project::Config)
   raise "This file must be required within a RubyMotion project Rakefile"
 end
 
-# $:.unshift("./lib/")
-# require './lib/rubymotiongraphics'
+$:.unshift("./lib/")
+require './lib/rubymotiongraphics'
 
 
 Motion::Project::App.setup do |app|
