@@ -13,7 +13,7 @@ Motion::Project::App.setup do |app|
     app.frameworks << 'CoreGraphics' unless app.frameworks.include?('CoreGraphics')
     app.frameworks << 'ApplicationServices' unless app.frameworks.include?('ApplicationServices')
     # p Dir.glob(File.join(File.dirname(__FILE__))
-    Dir.glob(File.join(File.dirname(__FILE__), 'lib/rubymotion-graphics/*.rb')).each do |file|
+    Dir.glob(File.join(File.dirname(__FILE__), 'rubymotion-graphics/*.rb')).each do |file|
       app.files.unshift(file)
     end
 end
