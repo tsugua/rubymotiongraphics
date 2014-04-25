@@ -38,13 +38,21 @@ module RMGraphics
       increment = 1.0 / (colors.size - 1).to_f
       i         = 0
       colors.each do |c|
-        cgcolor = CGColorCreate(@colorspace, [c.r, c.g, c.b, c.a])
+        # cgcolor = CGColorCreate(@colorspace, rgba )
+        cgcolor = NSColor.colorWithCalibratedRed(c.r, green: c.g, blue: c.b, alpha: c.a).CGColor
+
         cgcolors.push(cgcolor)
         location = i * increment
         locations.push(location)
         i = i + 1
       end
-      @gradient = CGGradientCreateWithColors(@colorspace, cgcolors, locations)
+      # p locations
+      locations_ptr = Pointer.new('d', locations.length)
+      # locations_ptr[1] = locations
+      locations.each { |e|
+          locations_ptr[locations.index(e)] = locations[e]
+        }
+      @gradient = CGGradientCreateWithColors(@colorspace, cgcolors, locations_ptr)
     end
   
     # extend gradient before start location? (true/false)

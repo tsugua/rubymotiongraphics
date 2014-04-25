@@ -149,7 +149,9 @@ module RMGraphics
         y = y - h / 2
       end
       puts "path.rect at [#{x},#{y}] with #{w}x#{h}" if @verbose
-      CGPathAddRect(@path, @transform, CGRectMake(x,y,w,h))
+      transform = Pointer.new(CGAffineTransform.type,6)
+      transform[0] = @transform
+      CGPathAddRect(@path, transform, CGRectMake(x,y,w,h))
       self
     end
 
@@ -185,7 +187,9 @@ module RMGraphics
         y = y - h / 2
       end
       puts "path.oval at [#{x},#{y}] with #{w}x#{h}" if @verbose
-      CGPathAddEllipseInRect(@path, @transform, CGRectMake(x, y, w, h))
+      transform = Pointer.new(CGAffineTransform.type,6)
+      transform[0] = @transform
+      CGPathAddEllipseInRect(@path, transform, CGRectMake(x, y, w, h))
       self
     end
 
@@ -222,7 +226,10 @@ module RMGraphics
   
     # move the "pen" to x,y
     def move_to(x, y)
-      CGPathMoveToPoint(@path, @transform,x,y)
+      #FIXME: This CGPathMoveToPoint seems to want a pointer which contains a string... Not sure what that format would be. Work around is to pass nil for the transform which probably limits functionality
+      # CGPathMoveToPoint(@path, @transform,x,y)
+      p @transform
+      CGPathMoveToPoint(@path, nil ,x,y)
       self
     end
   
@@ -240,7 +247,10 @@ module RMGraphics
   
     # draw a quadratic curve given a single control point and an end point
     def qcurve_to(cpx, cpy, x, y)
-      CGPathAddQuadCurveToPoint(@path, @transform, cpx, cpy, x, y)
+      # transform = Pointer.new(@transform, @)
+      transform = Pointer.new(CGAffineTransform.type,6)
+      transform[0] = @transform
+      CGPathAddQuadCurveToPoint(@path, transform, cpx, cpy, x, y)
       self
     end
   

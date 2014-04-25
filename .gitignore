@@ -1,4 +1,5 @@
 -.repl_history
+-build/*
 -build
 -tags
 -
@@ -8,6 +9,13 @@
 -.redcar
 -*.swp
 -*.swo
+-.idea
 -~
 -.eprj
 -
+
+.repl_history
+
+*.mm
+
+*.o
