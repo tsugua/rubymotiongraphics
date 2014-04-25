@@ -3,7 +3,7 @@ unless defined?(Motion::Project::Config)
 end
 
 # $:.unshift("./lib/")
-# require './lib/rubymotion-graphics'
+# require './lib/rubymotiongraphics'
 
 
 Motion::Project::App.setup do |app|
@@ -21,4 +21,6 @@ Motion::Project::App.setup do |app|
     end
 end
 
-# require 'rubymotion-graphics/canvas.rb'
+# require 'bw-addressbook/version'
+BW.require 'rubymotiongraphics/rubymotiongraphics.rb'
+require 'rubymotiongraphics/canvas.rb'
