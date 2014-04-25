@@ -23,4 +23,4 @@ end
 
 # require 'bw-addressbook/version'
 BW.require 'rubymotiongraphics/rubymotiongraphics.rb'
-require 'rubymotiongraphics/canvas.rb'
+# require 'rubymotiongraphics/canvas.rb'
