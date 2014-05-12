@@ -1,6 +1,15 @@
 # Rubymotion::Graphics
 
-TODO: Write a gem description
+Not yet a gem. Working on it.
+
+A port of Hotcocoa Graphics / MacRuby Graphics to be used with RubyMotion. See MacRuby Graphics Info here: https://github.com/mattetti/macruby_graphics and here
+http://github.com/drtoast/macruby_graphics
+
+To run the examples uncomment them one by one in the app_delegate and then build.
+
+A description of how they are supposed to look can be found at dr.toast's site: http://hcg.drtoast.com
+
+Enjoy!
 
 ## Installation
 
